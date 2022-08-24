@@ -92,7 +92,7 @@ class _MyAppState extends State<MyApp> {
               children: [
                 InkWell(
                   onTap: () {
-                    //
+                    //hehehe
                     print('Click');
                     Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => InputInformation(),
