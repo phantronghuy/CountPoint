@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_counter/objects/Player.dart';
 class InputInformation extends StatefulWidget{
-  const InputInformation({Key? key}) : super(key: key);
+   
+  // final Player player;
+  // const InputInformation(this.player) ;
   @override
   State<InputInformation> createState() => _InputInformationState();
 }
@@ -9,7 +11,9 @@ class InputInformation extends StatefulWidget{
 class _InputInformationState extends State<InputInformation> with WidgetsBindingObserver{
 
   TextEditingController nameController=TextEditingController();
-  Player player=Player.Default();
+  //Player player=Player.Default();
+  final Player player=Player(0, '');
+ // _InputInformationState(this.player);
    @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,11 +29,14 @@ class _InputInformationState extends State<InputInformation> with WidgetsBinding
                   TextField(
                     decoration: InputDecoration(labelText: 'Tên Người Chơi'),
                     controller: nameController,
+                    //onChanged: (text)=> widget.player.setName(text),
                     onChanged: (text)=> player.setName(text),
                   ),
                   FlatButton(
+                  
                     onPressed: () {
                       //Navigator.of(context).pop(player);
+                      // Navigator.pop(context,widget.player);
                       Navigator.pop(context,player);
                     },
                     child: Text('OKE'),
